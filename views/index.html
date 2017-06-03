@@ -1,7 +1,17 @@
 <! DOCTYPE html>
 <head>
+  <link rel="stylesheet" href="https://gitcdn.link/repo/Chalarangelo/mini.css/master/dist/mini-default.min.css">
 </head>
 <body>
-	<h1>FileList</h1>
-	{{files}}
+  <h1>FileList</h1>
+  <table align="left">
+  <form method="post">
+  {% for file in files %}
+    <tr>
+      <td>{{ file }}</td>
+      <td><input type="button" class="primary" value="Download" onclick="location.href='/download/{{ file }}'"></td>
+    </tr>
+  {% endfor %}
+  </form>
+  </table>
 </body>
